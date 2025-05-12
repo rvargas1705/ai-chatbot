@@ -9,29 +9,32 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f7fa;
+      background-color: #f9f9f9;
       color: #333;
     }
     .hero {
-      background-color: #2a2a72;
+      background-color: #3e7bfb;
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
+      border-bottom: 5px solid #2a64d8;
     }
     .hero h1 {
-      font-size: 2.5em;
+      font-size: 3em;
+      margin-bottom: 10px;
     }
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.4em;
+      margin-bottom: 20px;
     }
     .button {
-      background-color: #4CAF50;
+      background-color: #ff7b54;
       color: white;
       padding: 12px 24px;
       border: none;
       border-radius: 4px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
       margin-top: 20px;
       display: inline-block;
     }
@@ -43,16 +46,24 @@
     .pricing-table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 30px;
     }
     .pricing-table th, .pricing-table td {
       border: 1px solid #ccc;
-      padding: 12px;
+      padding: 15px;
       text-align: left;
+    }
+    .pricing-table th {
+      background-color: #f5f7fa;
+    }
+    .pricing-table tr:nth-child(even) {
+      background-color: #f0f4f8;
     }
     .footer {
       text-align: center;
       padding: 20px;
-      background-color: #eee;
+      background-color: #2a64d8;
+      color: white;
       font-size: 14px;
     }
   </style>
@@ -98,12 +109,12 @@
         <tr>
           <td>Starter</td>
           <td>FAQ + Lead Capture</td>
-          <td>$99/month</td>
+          <td>$49/month</td>
         </tr>
         <tr>
           <td>Pro</td>
           <td>Booking + Analytics</td>
-          <td>$299/month</td>
+          <td>$149/month</td>
         </tr>
         <tr>
           <td>Custom</td>
@@ -117,8 +128,8 @@
   <div class="section" id="contact">
     <h2>Let's Talk</h2>
     <p>Want to see what a chatbot can do for your business?</p>
-    <p><strong>Email:</strong> yourname@example.com</p>
-    <p><strong>Phone:</strong> (123) 456-7890</p>
+    <p><strong>Email:</strong> <a href="mailto:rafaelvargassilva9@gmail.com">rafaelvargassilva9@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+16178162211">+1 617 816 2211</a> or <a href="tel:+51987567299">+51 987 567 299</a></p>
   </div>
 
   <div class="footer">
@@ -126,14 +137,6 @@
   </div>
 
   <!-- ✅ Chatbot code goes here -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger
-    intent="WELCOME"
-    chat-title="Chatbot2"
-    agent-id="952692f7-e471-4661-96e2-dd053ee520e4"
-    language-code="en"
-  ></df-messenger>
+  <script src="https
 
-</body>
-</html>
 
