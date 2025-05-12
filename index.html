@@ -24,17 +24,6 @@
     .hero p {
       font-size: 1.2em;
     }
-    .button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 20px;
-      display: inline-block;
-    }
     .section {
       padding: 40px 20px;
       max-width: 900px;
@@ -46,7 +35,6 @@
       background-color: #eee;
       font-size: 14px;
     }
-    /* Custom styling for the chatbot selection */
     .chatbot-container {
       text-align: center;
       margin-top: 40px;
@@ -97,32 +85,29 @@
 
   <!-- Dialogflow script -->
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-
   <script>
-    // Function to load the Pizza Shop Chatbot
+    function createMessenger(agentId, title) {
+      const container = document.getElementById('chatbot-widget');
+      container.innerHTML = '';
+
+      const messenger = document.createElement('df-messenger');
+      messenger.setAttribute('intent', 'WELCOME');
+      messenger.setAttribute('chat-title', title);
+      messenger.setAttribute('agent-id', agentId);
+      messenger.setAttribute('language-code', 'en');
+
+      container.appendChild(messenger);
+    }
+
     function loadPizzaBot() {
-      document.getElementById('chatbot-widget').innerHTML = `
-        <df-messenger
-          intent="WELCOME"
-          chat-title="Restaurant/food"
-          agent-id="5e50973b-e351-4f8d-b934-13f25657b109"
-          language-code="en"
-        ></df-messenger>`;
+      createMessenger('5e50973b-e351-4f8d-b934-13f25657b109', 'Pizza Shop');
     }
 
-    // Function to load the Beauty Salon Chatbot
     function loadSalonBot() {
-      document.getElementById('chatbot-widget').innerHTML = `
-        <df-messenger
-          intent="WELCOME"
-          chat-title="Shoe store"
-          agent-id="81f214ff-386b-4f02-8c8e-f5f2c011d448"
-          language-code="en"
-        ></df-messenger>`;
+      createMessenger('81f214ff-386b-4f02-8c8e-f5f2c011d448', 'Beauty Salon');
     }
 
-    // Default load
-    loadPizzaBot(); // Load the Pizza Shop bot by default
+    window.onload = loadPizzaBot;
   </script>
 </body>
 </html>
