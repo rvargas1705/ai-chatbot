@@ -46,10 +46,7 @@
     .section p, li {
       font-size: 1.2em;
     }
-    ul {
-      padding-left: 20px;
-    }
-    ol {
+    ul, ol {
       padding-left: 20px;
     }
     .pricing-table {
@@ -162,10 +159,10 @@
 
   <div class="section chatbot-container">
     <h2>Try Our Chatbots</h2>
-    <p>Choose one of the chatbots to interact with — each tailored to a different business type:</p>
+    <p>Choose a chatbot to interact with — each tailored to a specific business:</p>
     <div class="chatbot-buttons">
-      <button onclick="loadPizzaBot()">Pizza Shop Chatbot</button>
-      <button onclick="loadSalonBot()">Beauty Salon Chatbot</button>
+      <button onclick="loadPizzaBot()">🍕 Pizza Shop (English)</button>
+      <button onclick="loadDentalBot()">🦷 Dental Clinic (Spanish)</button>
     </div>
     <div id="chatbot-widget"></div>
   </div>
@@ -177,7 +174,7 @@
   <!-- Dialogflow script -->
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
   <script>
-    function createMessenger(agentId, title) {
+    function createMessenger(agentId, title, lang) {
       const container = document.getElementById('chatbot-widget');
       container.innerHTML = '';
 
@@ -185,17 +182,18 @@
       messenger.setAttribute('intent', 'WELCOME');
       messenger.setAttribute('chat-title', title);
       messenger.setAttribute('agent-id', agentId);
-      messenger.setAttribute('language-code', 'en');
+      messenger.setAttribute('language-code', lang);
 
       container.appendChild(messenger);
     }
 
     function loadPizzaBot() {
-      createMessenger('5e50973b-e351-4f8d-b934-13f25657b109', 'Pizza Shop');
+      createMessenger('5e50973b-e351-4f8d-b934-13f25657b109', 'Pizza Shop', 'en');
     }
 
-    function loadSalonBot() {
-      createMessenger('81f214ff-386b-4f02-8c8e-f5f2c011d448', 'Beauty Salon');
+    function loadDentalBot() {
+      createMessenger(agent-id="81f214ff-386b-4f02-8c8e-f5f2c011d448"
+, 'Clínica Dental', 'es');
     }
 
     window.onload = loadPizzaBot;
